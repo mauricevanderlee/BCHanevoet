@@ -1,0 +1,62 @@
+// Import Bootstrap Material Design
+@import "./node_modules/bootstrap-material-design/less/bootstrap-material-design.less";
+/*
+@import "./node_modules/bootstrap-material-design/less/_variables.less";
+@import "./node_modules/bootstrap-material-design/less/_mixins.less";
+@import "./node_modules/bootstrap-material-design/less/_shadows.less";
+@import "./node_modules/bootstrap-material-design/less/_core.less";
+*/
+
+// Modify bootstrap variables here for theming
+@body-bg: @white;
+@brand-primary: @indigo;
+
+@navbar-default-bg: @grey-300;
+@navbar-default-link-hover-bg: @grey-400;
+
+.navbar {
+    background-image: linear-gradient(@grey-100, @grey-200 60%, @grey-300);
+    background-repeat: no-repeat;
+	margin-bottom: 0px !important;
+}
+
+.navbar:first .dropdown-menu {
+	z-index: 2000;
+}
+
+.sitelogo {
+	background: rgba(0, 0, 0, 0) url("http://bchanevoet.nl/img/shuttle.gif") repeat scroll 0 0;
+	margin-right: 10px;
+	float: left;
+	height: 60px;
+	width: 50px;
+}
+
+.navbar-header {
+	height:80px;
+}
+
+.navbar-brand > div {
+	font-size: 12px;
+	line-height: 8px;
+	white-space: nowrap;
+	margin-top: 10px;
+}
+
+.navbar-brand > div > a {
+	font-size: 24px;
+	line-height: 24px;
+	color: @mdb-label-color-toggle-focus;
+	text-decoration: none;
+	cursor: pointer;
+    &:hover,
+    &:focus {
+      color: @link-color;
+      background-color: transparent;
+    }
+}
+
+.navbar-brand > div > a > small {
+	font-size: 12px;
+}
+
