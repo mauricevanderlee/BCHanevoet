@@ -14,14 +14,21 @@
 @navbar-default-bg: @grey-300;
 @navbar-default-link-hover-bg: @grey-400;
 
-.navbar {
-    background-image: linear-gradient(@grey-100, @grey-200 60%, @grey-300);
-    background-repeat: no-repeat;
-	margin-bottom: 0px !important;
+@border-radius-base: 2px;
+@border-radius-small: 1px;
+
+h1, h2, h3, h4, h5, h6, .panel-heading {
+	font-family: 'trebuchet ms', 'Arial' !important;
+	font-weight: normal;
 }
 
-.navbar:first .dropdown-menu {
-	z-index: 2000;
+.navbar, .footer-below {
+    background-image: linear-gradient(@grey-100, @grey-200 60%, @grey-300);
+    background-repeat: no-repeat;
+}
+
+.navbar:first-of-type {
+	margin-bottom: 0px !important;
 }
 
 .sitelogo {
@@ -37,26 +44,61 @@
 }
 
 .navbar-brand > div {
+	font-family: 'trebuchet ms', 'Arial';
 	font-size: 12px;
 	line-height: 8px;
 	white-space: nowrap;
 	margin-top: 10px;
+	
+	> a {
+		font-size: 24px;
+		line-height: 24px;
+		color: @mdb-label-color-toggle-focus;
+		text-decoration: none;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+		  color: @link-color;
+		  background-color: transparent;
+		}
+
+		> small {
+			font-size: 12px;
+		}
+	}
+
 }
 
-.navbar-brand > div > a {
-	font-size: 24px;
-	line-height: 24px;
-	color: @mdb-label-color-toggle-focus;
-	text-decoration: none;
-	cursor: pointer;
-    &:hover,
-    &:focus {
-      color: @link-color;
-      background-color: transparent;
-    }
+footer {
+	background-color: @grey-300;
+	min-height: 30px;
+	width: 100%;
+	h3, p, p div {
+		text-align: center;
+	}
 }
 
-.navbar-brand > div > a > small {
-	font-size: 12px;
+.footer-below {
+/*	position: absolute;
+	bottom: 0px;
+*/	p {
+		line-height: 30px;
+		margin-bottom: 0px !important;
+		margin-top: 0px !important;
+		width: 100%;
+		text-align: center;
+	}
 }
 
+@border-width: 1px;
+@border-radius-large: 12px;
+
+.panel {
+	border-top-left-radius: 12px !important;
+	border-top-right-radius: 12px !important;
+}
+.panel-heading:first-child, .panel-body:first-child, .panel-footer:first-child {
+	border-top-left-radius: (@border-radius-large - 2 * @border-width) !important;
+	border-top-right-radius: (@border-radius-large - 2 * @border-width) !important;
+}
